@@ -5,7 +5,7 @@ import java.util.HashSet;
 // 1, 2, 3 _ 3 => 2
 // 1,-1, 0 _ 0 => 3
 
-public class SubarraySumEqualsK_560 {
+class SubarraySumEqualsK_560 {
 	
 	static public int subarraySum(int[] nums, int k) {
 	

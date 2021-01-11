@@ -5,8 +5,11 @@ public class Main {
 	public static void main(String[] args) {
 			System.out.println("--- start ---");
 			
-			int[] nums = {1,2,3};
-			System.out.println(SubarraySumEqualsK_560.subarraySum(nums, 3) );
+			CoinChange_322 oSol = new CoinChange_322();
+			int[] nums = {1,2,5};
+			oSol.coinChange(nums , 11);
+			
+
 			int[] nums2 = {1,-1,0};
 			System.out.println(SubarraySumEqualsK_560.subarraySum(nums2, 0) );
 			

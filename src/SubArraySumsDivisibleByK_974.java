@@ -1,6 +1,6 @@
 import java.util.HashMap;
 //4,5,0,-2,-3,1 _ 5 => 7
-public class SubArraySumsDivisibleByK_974 {
+class SubArraySumsDivisibleByK_974 {
     static public int subarraysDivByK(int[] A, int K) {
     	int retCount = 0;
     	int sumMod = 0;
