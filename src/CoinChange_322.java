@@ -1,4 +1,4 @@
-class CoinChange_322 {
+public class CoinChange_322 {
 	
 	//2차원으로 점화식을 그렸는데,,, 1차원으로 기록 가능했다... 확인
 	public int coinChange(int[] coins, int amount) {
