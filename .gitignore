@@ -1,10 +1,16 @@
+# Eclipse
+.settings/
 
-.classpath
+# Eclipse core
 .project
-.settings
+
+# JDT-Specific
+.classpath
+
 
 # Compiled class file
-*.class
+bin/
+.class
 
 # Log file
 *.log
