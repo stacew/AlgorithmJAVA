@@ -1,5 +1,5 @@
 
-public class DecodingWays_91 {
+public class DecodeWays_91 {
 	public int numDecodings(String s) {
 		if( s.charAt(0) == '0' )
 			return 0;

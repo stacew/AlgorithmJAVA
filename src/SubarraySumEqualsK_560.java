@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class SubarraySumEqualsK_560 {
 	
-	static public int subarraySum(int[] nums, int k) {
+	public int subarraySum(int[] nums, int k) {
 	
 		for( int i = 1;  i < nums.length;  i++) {
 			nums[i] = nums[i - 1] + nums[i];			
