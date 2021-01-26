@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.List;
 
 //380. Insert Delete GetRandom O(1)
-public class RandomizedSet {
+public class RandomizedSet_380 {
 
 	private List<Integer> m_al;
 	private HashMap<Integer, Integer> m_hm;
     /** Initialize your data structure here. */
-    public RandomizedSet() {
+    public RandomizedSet_380() {
     	m_hm = new HashMap<>();       
     	m_al = new ArrayList<>();
     }
