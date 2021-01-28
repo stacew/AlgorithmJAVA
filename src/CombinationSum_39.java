@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CombinationSum_39 {
-
 	public void BT(int target, int index, ArrayList<Integer> curList) {
 		if (target == 0) {
 			m_retList.add(new ArrayList<>(curList));
@@ -11,10 +9,10 @@ public class CombinationSum_39 {
 		}
 
 		for (int i = index; i < m_cand.length; i++) {
-			if( target - m_cand[i] >= 0) {
+			if (target - m_cand[i] >= 0) {
 				curList.add(m_cand[i]);
-				BT(target-m_cand[i], i , curList);
-				curList.remove(curList.size() -1 );
+				BT(target - m_cand[i], i, curList);
+				curList.remove(curList.size() - 1);
 			}
 		}
 	}
