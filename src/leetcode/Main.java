@@ -4,6 +4,7 @@ import leetcode.backtracking.SudokuSolver_37;
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("--- start ---");
+		
 		SudokuSolver_37 sol = new SudokuSolver_37();
 		char board[][] = { { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
 				{ '6', '.', '.', '1', '9', '5', '.', '.', '.' }, { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
