@@ -1,5 +1,5 @@
 package leetcode.array;
-//array, sliding( directonal : positive integer condition)
+//array, sliding( directonal : positive integer condition )
 
 //return the minimal length of a contiguous subarray
 //subarray ( = sum >= target) 
