@@ -1,5 +1,4 @@
 package leetcode;
-import leetcode.backtracking.N_Queens_51;
 import leetcode.backtracking.SudokuSolver_37;
 
 public class Main {
