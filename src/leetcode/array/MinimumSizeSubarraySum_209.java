@@ -2,7 +2,7 @@ package leetcode.array;
 //array, sliding( directonal : positive integer condition )
 
 //return the minimal length of a contiguous subarray
-//subarray ( = sum >= target) 
+//subarray (sum >= target) 
 //If there is no such subarray, return 0 instead.
 
 //1 <= nums.length <= 10^5
