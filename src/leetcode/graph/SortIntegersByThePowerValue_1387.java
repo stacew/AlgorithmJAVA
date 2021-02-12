@@ -14,7 +14,7 @@ public class SortIntegersByThePowerValue_1387 {
 	private int memo[];
 
 	public int getKth(int lo, int hi, int k) {
-		memo = new int[hi * 10];
+		memo = new int[hi * 1000];
 		List<Integer> list = new ArrayList<>();
 		for (int i = lo; i <= hi; i++) {
 			list.add(i);
