@@ -1,6 +1,7 @@
 package leetcode.linkedlist;
 
-//linkedList, fast/slow  
+//linkedList, fast/slow
+//modify check 방식 (-> hash set 바로 가능. java object가 같은지 비교. 일반 object 변수를 pointer라고 생각)
 public class LinkedListCycle_141 {
 	public boolean hasCycle_fastslow(ListNode head) {
 		ListNode fast = head;
