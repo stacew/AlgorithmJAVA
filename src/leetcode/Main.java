@@ -1,18 +1,19 @@
 package leetcode;
 
 import leetcode.backtracking.SudokuSolver_37;
+import leetcode.graph.SortIntegersByThePowerValue_1387;
 
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("--- start ---");
 
-		SudokuSolver_37 sol = new SudokuSolver_37();
+		SudokuSolver_37 sol37 = new SudokuSolver_37();
 		char board[][] = { { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
 				{ '6', '.', '.', '1', '9', '5', '.', '.', '.' }, { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
 				{ '8', '.', '.', '.', '6', '.', '.', '.', '3' }, { '4', '.', '.', '8', '.', '3', '.', '.', '1' },
 				{ '7', '.', '.', '.', '2', '.', '.', '.', '6' }, { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
 				{ '.', '.', '.', '4', '1', '9', '.', '.', '5' }, { '.', '.', '.', '.', '8', '.', '.', '7', '9' } };
-		sol.solveSudoku(board);
+		sol37.solveSudoku(board);
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				System.out.print(board[i][j] + "\t");
@@ -20,8 +21,11 @@ public class Main {
 			System.out.println();
 		}
 
-		// N_Queens_51 sol = new N_Queens_51();
-		// sol.solveNQueens(4);
+		SortIntegersByThePowerValue_1387 sol1387 = new SortIntegersByThePowerValue_1387();
+		sol1387.getKth(12, 15, 2);
+		
+		// N_Queens_51 sol51 = new N_Queens_51();
+		// sol51.solveNQueens(4);
 		System.out.println("--- end ---");
 	}
 };
