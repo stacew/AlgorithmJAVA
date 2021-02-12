@@ -1,6 +1,6 @@
 package leetcode.array;
 
-//array<int[]>. comparator(lambda), list.toArray( list -> T[] )  
+//array<int[]>. sort comparator(lambda), list.toArray( list -> T[] )  
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
