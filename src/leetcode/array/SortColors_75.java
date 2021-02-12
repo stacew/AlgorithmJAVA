@@ -1,5 +1,5 @@
 package leetcode.array;
-//in-place 3type swap
+
 //빨리 구현하려면 그냥 counting sort..
 //*. 구현 때, 디버깅 많이 필요하면 조건을 확실히 나눠서 처리 
 public class SortColors_75 {
