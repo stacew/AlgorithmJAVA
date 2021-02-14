@@ -1,5 +1,6 @@
 package leetcode.linkedlist;
 
+//ArrayList, Recursion(+Stack), prev/cur/next
 import java.util.ArrayList;
 import java.util.Stack;
 
