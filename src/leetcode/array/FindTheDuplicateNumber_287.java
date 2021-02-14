@@ -1,8 +1,7 @@
 package leetcode.array;
 
 //array, use value as index, modify, fast/slow
-//(cond : num values < size )
-//modify index move
+// cond : num values < size, nums[i] > 0
 public class FindTheDuplicateNumber_287 {
 	// fast/slow
 	public int findDuplicate(int[] nums) {
@@ -21,7 +20,7 @@ public class FindTheDuplicateNumber_287 {
 	}
 
 	// modify
-	public int findDuplicate_modify(int[] nums) {
+	public int findDuplicate_modifyMinus(int[] nums) {
 		int n = 0;
 		while (true) {
 			if (nums[n] < 0)
@@ -32,5 +31,16 @@ public class FindTheDuplicateNumber_287 {
 			nums[nTemp] = nums[nTemp] * -1;
 		}
 		return n;
+	}
+
+	public int findDuplicate_modifyNext(int[] nums) {
+		int next = nums[0];
+		int temp;
+		while (nums[next] != next) {
+			temp = nums[next];
+			nums[next] = next;
+			next = temp;
+		}
+		return next;
 	}
 }
