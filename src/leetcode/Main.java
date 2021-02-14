@@ -1,5 +1,6 @@
 package leetcode;
 
+import leetcode.array.ThreeSumClosest_16;
 import leetcode.backtracking.SudokuSolver_37;
 import leetcode.graph.SortIntegersByThePowerValue_1387;
 
@@ -26,6 +27,9 @@ public class Main {
 		
 		// N_Queens_51 sol51 = new N_Queens_51();
 		// sol51.solveNQueens(4);
+		
+		ThreeSumClosest_16 sol16 = new ThreeSumClosest_16();
+		sol16.threeSumClosest(new int[] {-1,2,1,-4}, 1);
 		System.out.println("--- end ---");
 	}
 };
