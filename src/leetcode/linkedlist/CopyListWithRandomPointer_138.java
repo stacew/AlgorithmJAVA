@@ -5,8 +5,19 @@ import java.util.HashMap;
 //1. old node, old r index map O(n), O(n)
 //2. old node, new node map O(n), O(n)
 //3. pointer swap O(n), O(1)
-
 public class CopyListWithRandomPointer_138 {
+	class Node {
+	    int val;
+	    Node next;
+	    Node random;
+
+	    public Node(int val) {
+	        this.val = val;
+	        this.next = null;
+	        this.random = null;
+	    }
+	}
+	
 	public Node copyRandomList3(Node head) {
 		if (head == null)
 			return null;
