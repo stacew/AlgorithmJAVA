@@ -1,6 +1,8 @@
+package leetcode.linkedlist;
+
 import java.util.HashMap;
 
-//O(1) time Bidirectional Linkedlist
+//LRU Cache O(1) time Bidirectional Linkedlist, HashMap
 public class LRUCache_146 {
 	private class LRUNode {
 		int key;
@@ -54,13 +56,13 @@ public class LRUCache_146 {
 		a_Node.next.prev = a_Node.prev;
 		return MoveToBack(a_Node);
 	}
+
 	private LRUNode MoveToBack(LRUNode a_Node) {
 		a_Node.prev = tail.prev;
 		a_Node.next = tail;
 		a_Node.prev.next = a_Node;
 		tail.prev = a_Node;
 		return a_Node;
-		
 	}
 
 	private void deleteFirst() {
@@ -72,10 +74,6 @@ public class LRUCache_146 {
 
 	private void insertNewBack(int key, int value) {
 		LRUNode newNode = new LRUNode(key, value);
-		newNode.prev = tail.prev;
-		newNode.next = tail;
-		newNode.prev.next = newNode;
-		tail.prev = newNode;
-		m_hm.put(key, newNode);
+		m_hm.put(key, MoveToBack(newNode));
 	}
 }
