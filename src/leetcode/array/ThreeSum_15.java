@@ -39,30 +39,30 @@ public class ThreeSum_15 {
 		return mRet;
 	}
 
-//	//BT(contain duplicate), diff index-> diff value. 
-//	public List<List<Integer>> threeSum(int[] nums) {
-//		List<List<Integer>> mRet = new ArrayList<List<Integer>>();
-//		Stack<int[]> oStack = new Stack<>();
-//		for (int i = 0; i < nums.length; i++)
-//			oStack.add(new int[] { i });
-//
-//		while (oStack.empty() == false) {
-//			int[] popArr = oStack.pop();
-//			if (popArr.length == 1) {
-//				for (int i = popArr[0] + 1; i < nums.length; i++) {
-//					oStack.add(new int[] { popArr[0], i });
-//				}
-//			} else if (popArr.length == 2) {
-//				for (int i = popArr[1] + 1; i < nums.length; i++) {
-//					oStack.add(new int[] { popArr[0], popArr[1], i });
-//				}
-//			} else {
-//				if (0 == nums[popArr[0]] + nums[popArr[1]] + nums[popArr[2]]) {
-//					mRet.add(new ArrayList<>(Arrays.asList(nums[popArr[0]], nums[popArr[1]], nums[popArr[2]])));
-//				}
-//			}
-//		}
-//
-//		return mRet;
-//	}
+	//BT(contain duplicate), diff index-> diff value. 
+	public List<List<Integer>> threeSum_BT(int[] nums) {
+		List<List<Integer>> mRet = new ArrayList<List<Integer>>();
+		Stack<int[]> oStack = new Stack<>();
+		for (int i = 0; i < nums.length; i++)
+			oStack.add(new int[] { i });
+
+		while (oStack.empty() == false) {
+			int[] popArr = oStack.pop();
+			if (popArr.length == 1) {
+				for (int i = popArr[0] + 1; i < nums.length; i++) {
+					oStack.add(new int[] { popArr[0], i });
+				}
+			} else if (popArr.length == 2) {
+				for (int i = popArr[1] + 1; i < nums.length; i++) {
+					oStack.add(new int[] { popArr[0], popArr[1], i });
+				}
+			} else {
+				if (0 == nums[popArr[0]] + nums[popArr[1]] + nums[popArr[2]]) {
+					mRet.add(new ArrayList<>(Arrays.asList(nums[popArr[0]], nums[popArr[1]], nums[popArr[2]])));
+				}
+			}
+		}
+
+		return mRet;
+	}
 }

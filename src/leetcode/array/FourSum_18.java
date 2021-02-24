@@ -12,18 +12,18 @@ public class FourSum_18 {
 		for (int i = 0; i < nums.length - 3; i++) {
 			if (i != 0 && nums[i - 1] == nums[i])// check duple
 				continue;
-			else if (nums[i] * 4 > target) // opti
-				break;
-			else if (nums[i] + nums[nums.length - 1] * 3 < target) // opti
-				continue;
+//			else if (nums[i] * 4 > target) // opti
+//				break;
+//			else if (nums[i] + nums[nums.length - 1] * 3 < target) // opti
+//				continue;
 
 			for (int j = i + 1; j < nums.length - 2; j++) {
 				if (j != i + 1 && nums[j - 1] == nums[j])// check duple
 					continue;
-				else if (nums[i] + nums[j] * 3 > target) // opti
-					break;
-				else if (nums[i] + nums[j] + nums[nums.length - 1] * 2 < target) // opti
-					continue;
+//				else if (nums[i] + nums[j] * 3 > target) // opti
+//					break;
+//				else if (nums[i] + nums[j] + nums[nums.length - 1] * 2 < target) // opti
+//					continue;
 
 				int sum12 = nums[i] + nums[j];
 
