@@ -25,7 +25,7 @@ class MyCircularQueue {
 	private int next(int a) {
 		if (a == arr.length - 1)
 			return 0;
-		return a - 1;
+		return a + 1;
 	}
 
 	public boolean enQueue(int value) {
