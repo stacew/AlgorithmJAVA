@@ -12,7 +12,6 @@ class MyCircularQueue {
 	int[] arr;
 	private int front;
 	private int rear;
-	// private boolean full; 써도 되는데 관리가 편하게 count.
 	private int count;
 
 	public MyCircularQueue(int k) {

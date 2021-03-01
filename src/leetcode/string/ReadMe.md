@@ -14,8 +14,7 @@
 # Palindrome (회문)
 	palindrome : 뒤에서 읽어도 앞에서 읽은 것과 같은 문자열
 	2 pointer 이용
-##### ValidPalindrome_125
-##### ValidPalindromeII_680
+##### ValidPalindrome_125, ValidPalindromeII_680
 
 
 # AddStrings_415

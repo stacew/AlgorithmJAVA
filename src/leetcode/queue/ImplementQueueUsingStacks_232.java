@@ -6,7 +6,6 @@ public class ImplementQueueUsingStacks_232 {
 
 }
 
-//amotized O(1) 2stack queue
 class MyQueue {
 
 	Stack<Integer> baseStack = null;
