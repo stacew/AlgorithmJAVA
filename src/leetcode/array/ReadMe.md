@@ -1,0 +1,30 @@
+# BinarySearch_704
+	정렬된 상태에서만 사용 가능,
+	while( l <= r ) left = mid + 1; right = mid - 1; 형태가 가독성 좋아 보인다.
+	
+# MoveZeros_283
+	모든 0을 우측으로 이동 시키기
+	1. 브루트 포스 : 같은 사이즈의 array를 만든 후, 0이 아닌 숫자를 앞에 인덱스 부터 넣는다. 공간복잡도 O(N) 증가
+	2. in-place : 0이 아닌 숫자를 삽입할 인덱스의 위치와 0이 아닌 숫자를 찾는 2 pointer 방식 사용
+	
+# FindPivotIndex_724
+	좌측의 합과 우측의 합이 같아지는 중앙 인덱스(Pivot) 찾기
+	sliding
+	0번 인덱스부터 이동하면서, 전체를 합한 결과(right)에서 제거한 값과 점점 더해지는 값(left)을 비교하면서 진행
+
+# SortColors_75
+	1. 범위가 제한적이라면 counting sort
+	2. 종류 3개 제한 in-place : left, right, pivot 3 pointer 이용.
+	단순히 이동하는게 아니라 생각보다 고려할게 있음.
+	
+# MergeSortedArray_88
+	큰 배열에 비공간에 데이터를 넣고 앞부터 채워넣는다라고 생각할 수 있는데,
+	오히려 뒷쪽 빈 공간에 데이터를 삽입하면서 진행하면 불필요한 작업이 없어진다.
+	꼭 작은 것 부터 정렬할 필요 없다는 생각하기.
+	
+# FindPeakElement_162
+	
+
+
+	
+	

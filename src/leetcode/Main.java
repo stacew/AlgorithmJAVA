@@ -6,19 +6,22 @@ import leetcode.graph.SortIntegersByThePowerValue_1387;
 import leetcode.string.GroupAnagrams_49;
 import leetcode.string.RabinKarp;
 import leetcode.string.ValidPalindromeII_680;
+import leetcode.tree.TreeDepthFirstSearch;
 
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("--- start ---");
 
-		System.out.println(RabinKarp.RabinKarp("mississippi", "pi"));
-
-		GroupAnagrams_49 sol49 = new GroupAnagrams_49();
-		String[] strs = new String[]{"eat","tea","tan","ate","nat","bat"};
-		sol49.groupAnagrams(strs);
+		TreeDepthFirstSearch test = new TreeDepthFirstSearch();
 		
-		ValidPalindromeII_680 sol680 = new ValidPalindromeII_680();
-		System.out.println(sol680.validPalindrome("abc"));
+//		System.out.println(RabinKarp.RabinKarp("mississippi", "pi"));
+//
+//		GroupAnagrams_49 sol49 = new GroupAnagrams_49();
+//		String[] strs = new String[]{"eat","tea","tan","ate","nat","bat"};
+//		sol49.groupAnagrams(strs);
+//		
+//		ValidPalindromeII_680 sol680 = new ValidPalindromeII_680();
+//		System.out.println(sol680.validPalindrome("abc"));
 
 //		
 //		SudokuSolver_37 sol37 = new SudokuSolver_37();
