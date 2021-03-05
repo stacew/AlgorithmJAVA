@@ -92,18 +92,8 @@ public class TreeDepthFirstSearch {
 	}
 	///
 	
-	class BNode {
-		int val;
-		BNode left;
-		BNode right;
 
-		BNode(int _val) {
-			val = _val;
-		}
-	}
 
-	Stack<BNode> stk = null;
-	StringBuilder str = null;
 	public TreeDepthFirstSearch() {
 		stk = new Stack<>();
 		str = new StringBuilder();
@@ -140,6 +130,10 @@ public class TreeDepthFirstSearch {
 		System.out.println(str);
 		str.delete(0, str.length());
 	}
+	
+
+	Stack<BNode> stk = null;
+	StringBuilder str = null;
 }
 
 //Post Order

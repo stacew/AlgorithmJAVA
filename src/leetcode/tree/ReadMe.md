@@ -19,7 +19,7 @@
 ##### dfs ( iterative stack )
 	Pre Order
 		1. stack에 root push
-		2.	top() 출력, pop()
+		2. top() 출력, pop()
 		3. top()의 존재하는 right, left 순서대로 push
 		*. empty까지 2 ~ 3 반복
 		
