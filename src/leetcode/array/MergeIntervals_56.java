@@ -18,7 +18,7 @@ public class MergeIntervals_56 {
 //				return o1[0] - o2[0];
 //			}
 //		});
-		Arrays.sort(intervals, (int[] a, int[] b) -> a[0] - b[0]); // java lambda
+		Arrays.sort(intervals, (int[] left, int[] right) -> left[0] - right[0]); // java lambda
 
 		List<int[]> temp = new ArrayList<>(); // Type : int[]허용
 

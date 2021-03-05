@@ -9,30 +9,61 @@ package leetcode.array;
 public class ShortestUnsortedContinuousSubarray_581 {
 
 	public int findUnsortedSubarray(int[] nums) {
-		int end = -1;
-		int max = Integer.MIN_VALUE;
+		
+		//가장 우측 지점 구하기
+		int right = -1;
+		int max = nums[0];
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] < max) {
-				end = i;
+				right = i;				
 			}
 			max = Math.max(max, nums[i]);
 		}
 
-		if (end == -1) //check
+		if (right == -1) //정렬이 된 상태인지 check
 			return 0;
 
-		int begin = -1;
-		int min = Integer.MAX_VALUE;
+		//가장 좌측 지점 구하기
+		int left = nums.length - 1;
+		int min = nums[nums.length - 1];
 		// *** reverse
 		for (int i = nums.length - 1; i >= 0; i--) {
-			if (nums[i] > min) {
-				begin = i;
+			if ( min < nums[i] ) {
+				left = i;
 			}
 			min = Math.min(min, nums[i]);
 		}
-
-		return end - begin + 1;
+		
+		// 만약 원하는 답이 sort라면 부분 sort
+				
+		return right - left + 1;
 	}
+	
+//	public int findUnsortedSubarray_(int[] nums) {
+//		int end = -1;
+//		int max = Integer.MIN_VALUE;
+//		for (int i = 0; i < nums.length; i++) {
+//			if (nums[i] < max) {
+//				end = i;
+//			}
+//			max = Math.max(max, nums[i]);
+//		}
+//
+//		if (end == -1) //check
+//			return 0;
+//
+//		int begin = -1;
+//		int min = Integer.MAX_VALUE;
+//		// *** reverse
+//		for (int i = nums.length - 1; i >= 0; i--) {
+//			if (nums[i] > min) {
+//				begin = i;
+//			}
+//			min = Math.min(min, nums[i]);
+//		}
+//
+//		return end - begin + 1;
+//	}
 
 //	static final int MAX_VALUE = 100001;
 //	static final int MIN_VALUE = -100001;
