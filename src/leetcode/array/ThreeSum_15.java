@@ -39,26 +39,72 @@ public class ThreeSum_15 {
 		return mRet;
 	}
 
-	//BT(contain duplicate), diff index-> diff value. 
-	public List<List<Integer>> threeSum_BT(int[] nums) {
+	// BT 연습 ( 중복 포함 )
+	public List<List<Integer>> threeSum_BT_(int[] nums) {
 		List<List<Integer>> mRet = new ArrayList<List<Integer>>();
 		Stack<int[]> oStack = new Stack<>();
-		for (int i = 0; i < nums.length; i++)
-			oStack.add(new int[] { i });
+		for (int index = 0; index < nums.length; index++)
+			oStack.add(new int[] { index });
 
 		while (oStack.empty() == false) {
 			int[] popArr = oStack.pop();
 			if (popArr.length == 1) {
-				for (int i = popArr[0] + 1; i < nums.length; i++) {
-					oStack.add(new int[] { popArr[0], i });
+				for (int index = popArr[0] + 1; index < nums.length; index++) {
+					oStack.add(new int[] { popArr[0], index });
 				}
 			} else if (popArr.length == 2) {
-				for (int i = popArr[1] + 1; i < nums.length; i++) {
-					oStack.add(new int[] { popArr[0], popArr[1], i });
+				for (int index = popArr[1] + 1; index < nums.length; index++) {
+					oStack.add(new int[] { popArr[0], popArr[1], index });
 				}
 			} else {
 				if (0 == nums[popArr[0]] + nums[popArr[1]] + nums[popArr[2]]) {
 					mRet.add(new ArrayList<>(Arrays.asList(nums[popArr[0]], nums[popArr[1]], nums[popArr[2]])));
+				}
+			}
+		}
+
+		return mRet;
+	}
+
+	// BT 연습 ( 중복 제거 ) O( 2^N )
+	public List<List<Integer>> threeSum_BT(int[] nums) {
+		List<List<Integer>> mRet = new ArrayList<List<Integer>>();
+		Stack<int[]> stkIndex = new Stack<>();
+
+		Arrays.sort(nums);
+		for (int index = 0; index < nums.length - 2; index++) {
+			if (index > 0 && nums[index] == nums[index - 1]) // check duplicate
+				continue;
+
+			stkIndex.add(new int[] { index });
+		}
+
+		while (stkIndex.empty() == false) {
+			int[] popArr = stkIndex.pop();
+
+			if (popArr.length == 1) {
+
+				for (int index = popArr[0] + 1; index < nums.length - 1; index++) {
+					if (index > popArr[0] + 1 && nums[index] == nums[index - 1]) // check duplicate
+						continue;
+
+					stkIndex.add(new int[] { popArr[0], index });
+				}
+
+			} else if (popArr.length == 2) {
+
+				for (int index = popArr[1] + 1; index < nums.length; index++) {
+					if (index > popArr[1] + 1 && nums[index] == nums[index - 1]) // check duplicate
+						continue;
+
+					stkIndex.add(new int[] { popArr[0], popArr[1], index });
+				}
+
+			} else {
+				if (0 == nums[popArr[0]] + nums[popArr[1]] + nums[popArr[2]]) {
+
+					mRet.add(new ArrayList<>(Arrays.asList(nums[popArr[0]], nums[popArr[1]], nums[popArr[2]])));
+
 				}
 			}
 		}

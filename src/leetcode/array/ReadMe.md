@@ -39,8 +39,24 @@
 	구간이 짧을수록 N Log N의 N 수치도 줄어들어서 좋음.
 
 # FindTheDuplicateNumber_287
-	123
+	비둘기집 원리 : n + 1개의 항목을 n개의 Array에 넣을 때 적어도 어느 한 상자에는 두 개 이상의 물건이 들어갈 수 있다는 증명
+	Array의 값을 인덱스로 보는 관점
+	
+# TwoSum_1, ThreeSumClosest_16, ThreeSum_15, FourSum_18
+	two sum. hashmap을 이용하여 확인하는 방법 O(N)t, O(N)s
+	정령과 2 포인터를 이용방법 O(NlogN + N)t => O(NlogN)t, O(1)s
+	threeSum 부터는 좌측 부터 타겟으로 잡고, 우측에 2개에 대한 값을 구하기 때문에 O(N^2)이 기본으로 들어감.	
 
+# RotateImage_48
+	접는 방식과 분할 영역 회전 방식
+
+# SearchA2DMatrix_74
+	바이너리 서치 O(log M + log N)t => O( logMN )t
+	좀 더 느리지만 SearchA2DMatrixII_240 코드로 작성은 빨리 가능 O( M + N )t
+# SearchA2DMatrixII_240
+	바이너리 서치 O( N log M )t
+	정렬 특성을 이용한 이동 방식 O( M + N )t
+	
 	
 	
 	

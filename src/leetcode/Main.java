@@ -1,5 +1,6 @@
 package leetcode;
 
+import leetcode.array.SearchA2DMatrix_74;
 import leetcode.array.ThreeSumClosest_16;
 import leetcode.backtracking.SudokuSolver_37;
 import leetcode.graph.SortIntegersByThePowerValue_1387;
@@ -13,9 +14,10 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("--- start ---");
 
+		SearchA2DMatrix_74 sol74 = new SearchA2DMatrix_74();
+		sol74.searchMatrix(new int[][]{{1,3,5,7},{10,11,16,20},{23,30,34,60}}, 3);
 		
-		
-		TreeBreadthFirstSearch TBFS = new TreeBreadthFirstSearch();
+//		TreeBreadthFirstSearch TBFS = new TreeBreadthFirstSearch();
 //		TreeDepthFirstSearch TDFS = new TreeDepthFirstSearch();
 //		System.out.println(RabinKarp.RabinKarp("mississippi", "pi"));
 //
