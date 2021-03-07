@@ -52,4 +52,10 @@
 # InvertBinaryTree_226
 	child swap
 	O(N)s, O(TreeDepth)t
-	Homebrew 개발자가 알고리즘 테스트 떨어진 문제
+	Homebrew 개발자 알고리즘 테스트 떨어진 문제
+	
+# PathSumII_113
+	tree root부터 leaf까지의 경로 합 확인하기
+	BackTracking 방식 O(N)t, O(Depth)s
+	
+	
