@@ -4,14 +4,14 @@ import java.util.Stack;
 
 public class TreeDepthFirstSearch {
 	
-	public void PreOrder(BNode root) {
+	public void PreOrder(TreeNode root) {
 		if (root == null)
 			return;
 		
 		stk.push(root);
 		while (stk.isEmpty() == false) {
 
-			BNode popTop = stk.pop();
+			TreeNode popTop = stk.pop();
 			str.append(popTop.val);
 
 			if (popTop.right != null)
@@ -22,14 +22,14 @@ public class TreeDepthFirstSearch {
 		}
 	}
 
-	private void LeftPushContinue(BNode cur) {
+	private void LeftPushContinue(TreeNode cur) {
 		while (cur != null) {
 			stk.push(cur);
 			cur = cur.left;
 		}
 	}
 
-	public void InOrder(BNode root) {
+	public void InOrder(TreeNode root) {
 		if (root == null)
 			return;
 
@@ -37,7 +37,7 @@ public class TreeDepthFirstSearch {
 
 		while (stk.isEmpty() == false) {
 
-			BNode popTop = stk.pop();
+			TreeNode popTop = stk.pop();
 			str.append(popTop.val);
 
 			if (popTop.right != null)
@@ -45,16 +45,16 @@ public class TreeDepthFirstSearch {
 		}
 	}
 
-	public void PostOrder(BNode root) {
+	public void PostOrder(TreeNode root) {
 		if (root == null)
 			return;
 
-		BNode lastPop = null;
+		TreeNode lastPop = null;
 		LeftPushContinue(root);
 
 		while (stk.isEmpty() == false) {
 
-			BNode peekTop = stk.peek();
+			TreeNode peekTop = stk.peek();
 			if (peekTop.right == null || peekTop.right == lastPop) { // readMe의 1-1, 1-3 조건
 
 				lastPop = stk.pop();
@@ -67,7 +67,7 @@ public class TreeDepthFirstSearch {
 		}
 	}
 	///
-	public void PreOrder_recur(BNode root) {
+	public void PreOrder_recur(TreeNode root) {
 		if (root == null)
 			return;
 		str.append(root.val);
@@ -75,7 +75,7 @@ public class TreeDepthFirstSearch {
 		PreOrder_recur(root.right);
 	}
 
-	public void InOrder_recur(BNode root) {
+	public void InOrder_recur(TreeNode root) {
 		if (root == null)
 			return;
 		InOrder_recur(root.left);
@@ -83,7 +83,7 @@ public class TreeDepthFirstSearch {
 		InOrder_recur(root.right);
 	}
 
-	public void PostOrder_recur(BNode root) {
+	public void PostOrder_recur(TreeNode root) {
 		if (root == null)
 			return;
 		PostOrder_recur(root.left);
@@ -97,9 +97,9 @@ public class TreeDepthFirstSearch {
 	public TreeDepthFirstSearch() {
 		stk = new Stack<>();
 		str = new StringBuilder();
-		BNode[] arr = new BNode[7];
+		TreeNode[] arr = new TreeNode[7];
 		for (int i = 0; i < arr.length; i++)
-			arr[i] = new BNode(i + 1);
+			arr[i] = new TreeNode(i + 1);
 		arr[0].left = arr[1];
 		arr[0].right = arr[2];
 		arr[1].left = arr[3];
@@ -132,7 +132,7 @@ public class TreeDepthFirstSearch {
 	}
 	
 
-	Stack<BNode> stk = null;
+	Stack<TreeNode> stk = null;
 	StringBuilder str = null;
 }
 

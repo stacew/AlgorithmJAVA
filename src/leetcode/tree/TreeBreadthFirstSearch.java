@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class TreeBreadthFirstSearch {
 
-	private void LevelOrder(BNode _root, int _level) {
+	private void LevelOrder(TreeNode _root, int _level) {
 		if (_root == null)
 			return;
 
@@ -15,7 +15,7 @@ public class TreeBreadthFirstSearch {
 
 			int thisLevelCount = q.size();
 			for (int i = 0; i < thisLevelCount; i++) {
-				BNode front = q.poll();
+				TreeNode front = q.poll();
 
 				if (level == _level || _level == -1)
 					str.append(front.val);
@@ -36,9 +36,9 @@ public class TreeBreadthFirstSearch {
 	public TreeBreadthFirstSearch() {
 		q = new LinkedList<>();
 		str = new StringBuilder();
-		BNode[] arr = new BNode[7];
+		TreeNode[] arr = new TreeNode[7];
 		for (int i = 0; i < arr.length; i++)
-			arr[i] = new BNode(i + 1);
+			arr[i] = new TreeNode(i + 1);
 		arr[0].left = arr[1];
 		arr[0].right = arr[2];
 		arr[1].left = arr[3];
@@ -55,6 +55,6 @@ public class TreeBreadthFirstSearch {
 		str.delete(0, str.length());
 	}
 
-	Queue<BNode> q = null;
+	Queue<TreeNode> q = null;
 	StringBuilder str = null;
 }

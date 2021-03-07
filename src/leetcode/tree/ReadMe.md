@@ -44,3 +44,12 @@
 
 ##### bfs ( quque )
 	Level Order
+
+# SymmetricTree_101
+	tree의 center 기준으로 좌측, 우측이 mirror 형태로 있는지 check
+	O(N)s, O(TreeDepth)t
+	
+# InvertBinaryTree_226
+	child swap
+	O(N)s, O(TreeDepth)t
+	Homebrew 개발자가 알고리즘 테스트 떨어진 문제

@@ -1,12 +1,20 @@
 package leetcode.tree;
 
-
-class BNode {
+class TreeNode {
 	int val;
-	BNode left;
-	BNode right;
+	TreeNode left;
+	TreeNode right;
 
-	BNode(int _val) {
-		val = _val;
+	TreeNode() {
+	}
+
+	TreeNode(int val) {
+		this.val = val;
+	}
+
+	TreeNode(int val, TreeNode left, TreeNode right) {
+		this.val = val;
+		this.left = left;
+		this.right = right;
 	}
 }
