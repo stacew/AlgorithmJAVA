@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class ReverseLinkedList_206 {
-	// prev, cur, next 0ms
+	// prev, cur, next 0ms : : O(N)t, O(1)s
 	public ListNode reverseList(ListNode head) {
 		if (head == null || head.next == null) {
 			return head;
@@ -13,19 +13,20 @@ public class ReverseLinkedList_206 {
 
 		ListNode prev = head;
 		ListNode cur = head.next;
-		head.next = null;//
+
+		prev.next = null;//
+
 		do {
 			ListNode tempNext = cur.next;
 			cur.next = prev;
 			prev = cur;
 			cur = tempNext;
 		} while (cur != null);
-		head = prev; //
 
-		return head;
+		return prev; //
 	}
 
-	// ArrayList 0ms
+	// ArrayList 0ms : O(N)t, O(N)s
 	public ListNode reverseList_ArrayList(ListNode head) {
 		if (head == null)
 			return null;
@@ -47,24 +48,23 @@ public class ReverseLinkedList_206 {
 		return head;
 	}
 
-	// recursion 21ms
-	public ListNode reverseList_recursion(ListNode head) {
-		if (head == null || head.next == null) {
+	// recursion 22ms : O(N^2)t, O(N)s
+	public ListNode reverseList_recur(ListNode head) {
+		if (head == null || head.next == null)
 			return head;
-		}
 
-		ListNode rec = reverseList_recursion(head.next);
-		while (rec != null && rec.next != null) {
-			rec = rec.next;
-		}
+		ListNode rec = reverseList_recur(head.next);
 
-		rec.next = head;
+		ListNode cur = rec;
+		while (cur.next != null)
+			cur = cur.next;
 
 		head.next = null;
+		cur.next = head;
 		return rec;
 	}
 
-	// stack 0~1ms
+	// stack 0~1ms : O(N)t, O(N)s
 	public ListNode reverseList_stack(ListNode head) {
 		if (head == null)
 			return null;

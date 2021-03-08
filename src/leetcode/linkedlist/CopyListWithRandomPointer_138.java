@@ -2,57 +2,67 @@ package leetcode.linkedlist;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 //1. old node, old r index map O(n), O(n)
 //2. old node, new node map O(n), O(n)
 //3. pointer swap O(n), O(1)
 public class CopyListWithRandomPointer_138 {
 	class Node {
-	    int val;
-	    Node next;
-	    Node random;
+		int val;
+		Node next;
+		Node random;
 
-	    public Node(int val) {
-	        this.val = val;
-	        this.next = null;
-	        this.random = null;
-	    }
+		public Node(int val) {
+			this.val = val;
+			this.next = null;
+			this.random = null;
+		}
 	}
-	
+
 	public Node copyRandomList3(Node head) {
 		if (head == null)
 			return null;
-		// copy combine
+		
+		// copy combine : copied node를 기존 node 뒤에 삽입한다.
 		Node cur = head;
 		while (cur != null) {
-			Node temp = new Node(cur.val);
-			temp.next = cur.next;
-			cur.next = temp;
+			Node copiedNode = new Node(cur.val);
+			copiedNode.next = cur.next;
+			cur.next = copiedNode;
 			cur = cur.next.next;
 		}
+		
 		// set random
 		cur = head;
 		while (cur != null) {
+			
 			if (cur.random != null) {
+				//cur.next.random : copiedNode의 random pointer
+				//cur.random.next : 기존 랜덤 node의 copiedNode 
 				cur.next.random = cur.random.next;
 			}
+			
 			cur = cur.next.next;
 		}
 
 		// separate
 		cur = head;
-		Node dHead = cur.next;
-		Node dCur = dHead;
+		Node copiedHead = cur.next;
+		Node cCur = copiedHead;
 		while (cur != null) {
 
-			cur.next = dCur.next;
-			if (dCur.next != null)
-				dCur.next = dCur.next.next;
+			cur.next = cCur.next;
+			if (cCur.next != null)
+				cCur.next = cCur.next.next;
 
 			cur = cur.next;
-			dCur = dCur.next;
+			cCur = cCur.next;
 		}
-		return dHead;
+		
+		return copiedHead;
 	}
+	
+	
 
 	public Node copyRandomList2(Node head) {
 		HashMap<Node, Node> nnMap = new HashMap<Node, Node>();
@@ -61,11 +71,13 @@ public class CopyListWithRandomPointer_138 {
 		Node cur = head;
 		Node dCur = dHead;
 		while (cur != null) {
-			dCur.next = new Node(cur.val);
+
+			Node copiedNode = new Node(cur.val);
+			nnMap.put(cur, copiedNode);
+
+			dCur.next = copiedNode;
+
 			dCur = dCur.next;
-
-			nnMap.put(cur, dCur);
-
 			cur = cur.next;
 		}
 
@@ -88,31 +100,30 @@ public class CopyListWithRandomPointer_138 {
 			return null;
 
 		HashMap<Node, Integer> NodeIndexMap = new HashMap<Node, Integer>();
-		ArrayList<Node> arr = new ArrayList<Node>();
+		ArrayList<Node> arrCopiedNode = new ArrayList<Node>();
 
-		int i = 0;
+		int index = 0;
 		Node cur = head;
 		while (cur != null) {
-			NodeIndexMap.put(cur, i);
-			arr.add(new Node(cur.val));
-			if (i > 0)
-				arr.get(i - 1).next = arr.get(i);
-
-			i++;
+			NodeIndexMap.put(cur, index++);
+			arrCopiedNode.add(new Node(cur.val));
 			cur = cur.next;
 		}
 
-		i = 0;
+		for (int i = 0; i < arrCopiedNode.size() - 1; i++)
+			arrCopiedNode.get(i).next = arrCopiedNode.get(i + 1);
+
+		index = 0;
 		cur = head;
 		while (cur != null) {
 			if (cur.random != null) {
-				int r = NodeIndexMap.get(cur.random);
-				arr.get(i).random = arr.get(r);
+				int randomIndex = NodeIndexMap.get(cur.random);
+				arrCopiedNode.get(index).random = arrCopiedNode.get(randomIndex);
 			}
-			i++;
+			index++;
 			cur = cur.next;
 		}
 
-		return arr.get(0);
+		return arrCopiedNode.get(0);
 	}
 }

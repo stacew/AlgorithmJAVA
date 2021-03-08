@@ -20,7 +20,7 @@ public class PathSumII_113 {
 
 	private void pathSum_recur(TreeNode cur, List<Integer> list, int target) {
 
-		list.add(cur.val);
+		list.add(cur.val);//1 호출 앞 뒤로 하는 부분 코드 복잡해서 시작 끝으로 뺌
 
 		target -= cur.val;
 
@@ -36,6 +36,6 @@ public class PathSumII_113 {
 			}
 		}
 
-		list.remove(list.size() - 1);
+		list.remove(list.size() - 1);//2
 	}
 }

@@ -12,6 +12,9 @@
 	sliding
 	0번 인덱스부터 이동하면서, 전체를 합한 결과(right)에서 제거한 값과 점점 더해지는 값(left)을 비교하면서 진행
 
+# MinimumSizeSubarraySum_209
+	해당 문제 sliding이 가능한 이유는 positive integer 조건
+
 # SortColors_75
 	1. 범위가 제한적이라면 counting sort
 	2. 종류 3개 제한 in-place : left, right, pivot 3 pointer 이용.
