@@ -40,3 +40,6 @@
 	dp[n] =
 	+ number(n) ? dp[n-1] : 0
 	+ number(n-1, n) ? dp[n-2] : 0
+
+	recursive
+![DecodeWays_91_Recursive](./DecodeWays_91_Recursive.jpg)
