@@ -42,7 +42,7 @@
 		
 
 
-##### bfs ( quque )
+##### bfs ( queue )
 	Level Order
 
 # SymmetricTree_101
@@ -57,5 +57,19 @@
 # PathSumII_113
 	tree root부터 leaf까지의 경로 합 확인하기
 	BackTracking 방식 O(N)t, O(Depth)s
+	
+# DiameterOfBinaryTree_543
+	Diameter : 한 곳의 노드에서 다른 곳의 노드 까지의 최대 길이 ( root를 지나지 않아도 최대 길이가 될 수 있다 )
+	O(N)t, O(Depth)s
+	
+# LowestCommonAncestorOfABinaryTree_236
+	트리에서 주어진 두 노드 p, q의 가장 낮은 공통 조상을 찾는 문제
+	풀이 : left와 right recursion이 둘 다 올라오는 곳의 위치가 가장 낮은 조상 노드.
+	opti : 만약 자신이 p와 q 중 하나라도 같다면,
+	자신의 하위에 다른 노드가 있다고 해도 자신이 가장 낮은 공통 조상이기 때문에 더 이상 child를 확인할 필요 없음.
+	O(N)t, O(Depth)s
+	
+	
+	
 	
 	

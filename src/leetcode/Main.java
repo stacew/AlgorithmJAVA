@@ -3,19 +3,23 @@ package leetcode;
 import leetcode.array.SearchA2DMatrix_74;
 import leetcode.array.ThreeSumClosest_16;
 import leetcode.backtracking.SudokuSolver_37;
+import leetcode.dp.DecodeWays_91;
 import leetcode.graph.SortIntegersByThePowerValue_1387;
 import leetcode.string.GroupAnagrams_49;
 import leetcode.string.RabinKarp;
 import leetcode.string.ValidPalindromeII_680;
-import leetcode.tree.TreeBreadthFirstSearch;
-import leetcode.tree.TreeDepthFirstSearch;
+import leetcode.tree.TreeBFS;
+import leetcode.tree.TreeDFS;
 
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("--- start ---");
 
-		SearchA2DMatrix_74 sol74 = new SearchA2DMatrix_74();
-		sol74.searchMatrix(new int[][]{{1,3,5,7},{10,11,16,20},{23,30,34,60}}, 3);
+		DecodeWays_91 sol91 = new DecodeWays_91();
+		System.out.println(sol91.numDecodings("12024"));
+		
+//		SearchA2DMatrix_74 sol74 = new SearchA2DMatrix_74();
+//		sol74.searchMatrix(new int[][]{{1,3,5,7},{10,11,16,20},{23,30,34,60}}, 3);
 		
 //		TreeBreadthFirstSearch TBFS = new TreeBreadthFirstSearch();
 //		TreeDepthFirstSearch TDFS = new TreeDepthFirstSearch();

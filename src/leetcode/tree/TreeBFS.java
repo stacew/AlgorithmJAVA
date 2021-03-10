@@ -3,7 +3,7 @@ package leetcode.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class TreeBreadthFirstSearch {
+public class TreeBFS {
 
 	private void LevelOrder(TreeNode _root, int _level) {
 		if (_root == null)
@@ -33,7 +33,7 @@ public class TreeBreadthFirstSearch {
 		}
 	}
 
-	public TreeBreadthFirstSearch() {
+	public TreeBFS() {
 		q = new LinkedList<>();
 		str = new StringBuilder();
 		TreeNode[] arr = new TreeNode[7];

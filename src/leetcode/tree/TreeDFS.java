@@ -2,12 +2,13 @@ package leetcode.tree;
 
 import java.util.Stack;
 
-public class TreeDepthFirstSearch {
-	
+public class TreeDFS {
+
+	// iterative
 	public void PreOrder(TreeNode root) {
 		if (root == null)
 			return;
-		
+
 		stk.push(root);
 		while (stk.isEmpty() == false) {
 
@@ -19,13 +20,6 @@ public class TreeDepthFirstSearch {
 
 			if (popTop.left != null)
 				stk.push(popTop.left);
-		}
-	}
-
-	private void LeftPushContinue(TreeNode cur) {
-		while (cur != null) {
-			stk.push(cur);
-			cur = cur.left;
 		}
 	}
 
@@ -66,7 +60,16 @@ public class TreeDepthFirstSearch {
 			}
 		}
 	}
-	///
+
+	// iterative util
+	private void LeftPushContinue(TreeNode cur) {
+		while (cur != null) {
+			stk.push(cur);
+			cur = cur.left;
+		}
+	}
+
+	// recursive
 	public void PreOrder_recur(TreeNode root) {
 		if (root == null)
 			return;
@@ -90,11 +93,9 @@ public class TreeDepthFirstSearch {
 		PostOrder_recur(root.right);
 		str.append(root.val);
 	}
-	///
-	
 
-
-	public TreeDepthFirstSearch() {
+	// test
+	public TreeDFS() {
 		stk = new Stack<>();
 		str = new StringBuilder();
 		TreeNode[] arr = new TreeNode[7];
@@ -106,23 +107,21 @@ public class TreeDepthFirstSearch {
 		arr[1].right = arr[4];
 		arr[2].left = arr[5];
 		arr[2].right = arr[6];
-		
+
 		PreOrder_recur(arr[0]);
 		System.out.println(str);
-		str.delete(0, str.length());		
+		str.delete(0, str.length());
 		PreOrder(arr[0]);
 		System.out.println(str);
 		str.delete(0, str.length());
-		
-		
+
 		InOrder_recur(arr[0]);
 		System.out.println(str);
 		str.delete(0, str.length());
 		InOrder(arr[0]);
 		System.out.println(str);
 		str.delete(0, str.length());
-		
-		
+
 		PostOrder_recur(arr[0]);
 		System.out.println(str);
 		str.delete(0, str.length());
@@ -130,7 +129,6 @@ public class TreeDepthFirstSearch {
 		System.out.println(str);
 		str.delete(0, str.length());
 	}
-	
 
 	Stack<TreeNode> stk = null;
 	StringBuilder str = null;
