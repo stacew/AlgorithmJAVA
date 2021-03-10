@@ -34,12 +34,27 @@
 	
 # DecodeWays_91
 	인코딩된 숫자 어레이를 디코딩 하는 방법의 개수를 구하는 문제
-	ex )	2,6 -> z || b, f
-			2,2,3 -> b, b, c, || b, w || vc
+	ex )	26  -> b(2), f(6) || z(26)
+			223 -> b(2), b(2), c(3), || b(2), w(23) || v(22), c(3)
 			
 	dp[n] =
 	+ number(n) ? dp[n-1] : 0
 	+ number(n-1, n) ? dp[n-2] : 0
 
-	recursive
+	recursive : 그림 예제에 'z'를 넘는 숫자도 빨강 '-' 표시
+	만약 마지막 24를 29로 바꾼다면 답은 1개
 ![DecodeWays_91_Recursive](./DecodeWays_91_Recursive.jpg)
+
+# MaximumSubarray_53
+	가장 큰 subArray 합을 구하는 문제(음수 포함)
+	1. dp[n] = max( arr[n], dp[n - 1] + arr[n] )
+	2.	dp[n] 중에 max값 리턴
+	
+# MaximumProductSubarray_152
+	가장 큰 subArray 곱을 구하는 문제
+	
+	1. dp : 음수 * 음수 최대값이 발생할 수 있기 때문에 min 값도 저장하면서 진행
+	
+	2. idea : 좌측으로 진행하며 max구하고, 우측 진행하며 max 구하기.
+	- maxSubArray의 처음이나 끝 부분의 음수 하나로 최대 값이 안 될 수 있기 때문에 양 방향 진행
+	
